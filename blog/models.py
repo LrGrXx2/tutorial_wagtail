@@ -10,6 +10,7 @@ from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel,  MultiFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 
@@ -110,3 +111,4 @@ class BlogCategory(models.Model):
     class Meta:
         verbose_name_plural = 'categorías de blog'
         verbose_name = 'categoría de blog'
+

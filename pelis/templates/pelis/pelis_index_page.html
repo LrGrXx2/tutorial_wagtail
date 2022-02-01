@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<br>
+<br>
+
+{% for p in peliculas %} 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">{{ p.title }}</div>
+        <div class="col-sm-4">{{ p.cast }}</div>
+        <div class="col-sm-4">{{ p.year }}</div>
+    </div>
+</div><br>
+{% endfor %}
+
+
+{% if peliculas.paginator.count > 1 %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        {% include "includes/pagination.html" with subpages=peliculas %}
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock content %}
